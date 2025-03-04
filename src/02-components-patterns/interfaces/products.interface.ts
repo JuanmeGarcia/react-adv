@@ -1,4 +1,5 @@
-import { ReactNode } from "react"
+import { CSSProperties, ReactNode } from "react"
+import { Props as ProductCardProps } from "../components/ProductCard"
 
 export type ProductContextProps = {
   counter: number
@@ -13,17 +14,19 @@ export type Product = {
   img: string
 }
 
-export type ProductCardProps = {
-  product: Product
-  children?: ReactNode
+export type ImageProps = {
+  img?: string, className?: string, style?: CSSProperties
 }
-
-export type ImageProps = { img?: string }
-export type TitleProps = { title?: string }
+export type TitleProps = {
+  title?: string, className?: string, style?: CSSProperties
+}
+export type ButtonsProps = {
+  className?: string, style?: CSSProperties
+}
 
 export type ProductCardHocProps = {
   ({ product, children }: ProductCardProps): JSX.Element;
   Image: ({ img }: ImageProps) => JSX.Element;
   Title: ({ title }: TitleProps) => JSX.Element;
-  Buttons: () => JSX.Element;
+  Buttons: ({ className }: ButtonsProps) => JSX.Element;
 }
