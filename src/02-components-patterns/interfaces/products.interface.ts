@@ -30,3 +30,8 @@ export type ProductCardHocProps = {
   Title: ({ title }: TitleProps) => JSX.Element;
   Buttons: ({ className }: ButtonsProps) => JSX.Element;
 }
+
+export type onChangeArgs = {
+  product: Product;
+  amount: number;
+}
