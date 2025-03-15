@@ -5,6 +5,7 @@ export type ProductContextProps = {
   counter: number
   increaseBy: (value: number) => void
   product: Product
+  maxCount?: number
 }
 
 
@@ -34,4 +35,18 @@ export type ProductCardHocProps = {
 export type onChangeArgs = {
   product: Product;
   amount: number;
+}
+
+export type InitialValues = {
+  count: number;
+  maxCount?: number
+}
+
+export type ProductCardHandlers = {
+  count: number
+  maxCount?: number
+  isMaxCountReached: boolean
+  product: Product
+  increaseBy: (value: number) => void
+  reset: () => void
 }
